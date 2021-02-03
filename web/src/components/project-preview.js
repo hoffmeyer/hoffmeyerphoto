@@ -8,8 +8,9 @@ import styles from './project-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ProjectPreview (props) {
+  console.log(props)
   return (
-    <Link className={styles.root} to={`/project/${props.slug.current}`}>
+    <Link className={styles.root} to={`/gallery/${props.slug.current}`}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -22,9 +23,9 @@ function ProjectPreview (props) {
         )}
       </div>
       <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-      {props._rawExcerpt && (
+      {props._rawDescription && (
         <div className={styles.excerpt}>
-          <BlockText blocks={props._rawExcerpt} />
+          <BlockText blocks={props._rawDescription} />
         </div>
       )}
     </Link>
