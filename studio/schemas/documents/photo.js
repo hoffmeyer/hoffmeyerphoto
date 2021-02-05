@@ -17,12 +17,6 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'figure'
-    },
-    {
-      name: 'galleries',
-      title: 'Galleries',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'gallery'}}]
-    },
+    }
   ]
 }

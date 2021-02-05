@@ -28,5 +28,11 @@ export default {
       title: 'Main image',
       type: 'figure'
     },
+    {
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'photo'}}]
+    },
   ]
 }

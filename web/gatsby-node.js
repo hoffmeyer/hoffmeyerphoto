@@ -9,11 +9,10 @@ async function createProjectPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
-        edges {
+      allSanityGallery(filter: { slug: {current: {ne: null}}}) {
+        edges	{
           node {
             id
-            publishedAt
             slug {
               current
             }
@@ -25,18 +24,18 @@ async function createProjectPages (graphql, actions) {
 
   if (result.errors) throw result.errors
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
+  const projectEdges = (result.data.allSanityGallery || {}).edges || []
 
   projectEdges
-    .filter(edge => !isFuture(edge.node.publishedAt))
+    //.filter(edge => !isFuture(edge.node.publishedAt))
     .forEach(edge => {
       const id = edge.node.id
       const slug = edge.node.slug.current
-      const path = `/project/${slug}/`
+      const path = `/gallery/${slug}/`
 
       createPage({
         path,
-        component: require.resolve('./src/templates/project.js'),
+        component: require.resolve('./src/templates/gallery.js'),
         context: {id}
       })
     })
