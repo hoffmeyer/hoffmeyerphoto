@@ -34,5 +34,11 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'photo'}}]
     },
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'mainImage'
+    }
+  }
 }

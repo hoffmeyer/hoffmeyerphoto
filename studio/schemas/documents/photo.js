@@ -18,5 +18,11 @@ export default {
       title: 'Image',
       type: 'figure'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image'
+    }
+  }
 }
