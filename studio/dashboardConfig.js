@@ -44,7 +44,7 @@ export default {
     {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: {title: 'Recent projects', order: '_createdAt desc', types: ['sampleProject']},
+      options: {title: 'Recent galleries', order: '_createdAt desc', types: ['gallery']},
       layout: {width: 'medium'}
     }
   ]
