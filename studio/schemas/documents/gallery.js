@@ -1,6 +1,9 @@
+import { MdBurstMode } from 'react-icons/md'
+
 export default {
   name: 'gallery',
   type: 'document',
+  icon: MdBurstMode,
   title: 'Gallery',
   fields: [
     {

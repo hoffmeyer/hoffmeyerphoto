@@ -1,6 +1,9 @@
+import { MdBurstMode, MdImage } from 'react-icons/md'
+
 export default {
   name: 'photo',
   type: 'document',
+  icon: MdImage,
   title: 'Photo',
   fields: [
     {
