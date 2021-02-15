@@ -16,6 +16,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       description: 'Some frontend will require a slug to be set to be able to show the project',
+      validation: Rule => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96
