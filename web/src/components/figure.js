@@ -3,7 +3,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import clientConfig from '../../client-config'
 
-import styles from './figure.module.css'
+import {root} from './figure.module.css'
 
 export default ({node}) => {
   if (!node.asset) {
@@ -13,7 +13,7 @@ export default ({node}) => {
   const fluidProps = getFluidGatsbyImage(node.asset._ref, {maxWidth: 675}, clientConfig.sanity)
 
   return (
-    <figure className={styles.root}>
+    <figure className={root}>
       <GatsbyImage fluid={fluidProps} alt={node.alt} />
       {node.caption && <figcaption>{node.caption}</figcaption>}
     </figure>
