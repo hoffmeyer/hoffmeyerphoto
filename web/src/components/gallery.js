@@ -8,12 +8,12 @@ import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
 
-import styles from './project.module.css'
+import { root, grid, mainContent, title, metaContent} from './project.module.css'
 
 function Project ( props ) {
   const {_rawDescription, title, photos, mainImage } = props
   return (
-    <article className={styles.root}>
+    <article className={root}>
       {/* {props.mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <img
@@ -27,12 +27,12 @@ function Project ( props ) {
         </div>
       )} */}
       <Container>
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+        <div className={grid}>
+          <div className={mainContent}>
+            <h1 className={title}>{title}</h1>
             {_rawDescription && <BlockContent blocks={_rawDescription || []} />}
           </div>
-          <aside className={styles.metaContent}>
+          <aside className={metaContent}>
             <ul>
             {photos.map( photo => 
               <li>

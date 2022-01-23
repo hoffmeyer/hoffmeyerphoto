@@ -4,13 +4,13 @@ import {cn, buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import BlockText from './block-text'
 
-import styles from './project-preview.module.css'
+import {root, leadMediaThumb, title,  excerpt} from './project-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ProjectPreview (props) {
   return (
-    <Link className={styles.root} to={`/gallery/${props.slug.current}`}>
-      <div className={styles.leadMediaThumb}>
+    <Link className={root} to={`/gallery/${props.slug.current}`}>
+      <div className={leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
@@ -21,9 +21,9 @@ function ProjectPreview (props) {
           />
         )}
       </div>
-      <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
+      <h3 className={cn(responsiveTitle3, title)}>{props.title}</h3>
       {props._rawDescription && (
-        <div className={styles.excerpt}>
+        <div className={excerpt}>
           <BlockText blocks={props._rawDescription} />
         </div>
       )}
